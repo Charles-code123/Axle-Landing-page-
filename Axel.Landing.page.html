@@ -9,14 +9,14 @@
     <meta property="og:description" content="Connect. Verify. Deliver. The premium platform for verified transportation logistics.">
     <meta property="og:type" content="website">
     <title>Axle - Where Enterprise Meets the Road™</title>
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --cyan: #00bfff;
             --dark: #1a1a2e;
@@ -25,14 +25,14 @@
             --success: #10b981;
             --error: #ef4444;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark);
             overflow-x: hidden;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
@@ -43,7 +43,7 @@
             z-index: 1000;
             padding: 1rem 2rem;
         }
-        
+
         nav .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -51,30 +51,30 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--dark);
         }
-        
+
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
+
         .nav-links a {
             text-decoration: none;
             color: var(--gray);
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: var(--cyan);
         }
-        
+
         .btn {
             padding: 0.75rem 1.5rem;
             border: none;
@@ -85,30 +85,30 @@
             text-decoration: none;
             display: inline-block;
         }
-        
+
         .btn-primary {
             background: var(--cyan);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background: #0099cc;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
         }
-        
+
         .btn-outline {
             background: transparent;
             color: white;
             border: 2px solid white;
         }
-        
+
         .btn-outline:hover {
             background: white;
             color: var(--dark);
         }
-        
-        /* Hero Section with Video Background */
+
+        /* Hero Section with Gradient Background (NO VIDEO) */
         .hero {
             position: relative;
             height: 100vh;
@@ -119,34 +119,33 @@
             text-align: center;
             color: white;
             overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         }
-        
-        .hero-video {
+
+        /* Animated gradient background */
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            z-index: -2;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 191, 255, 0.1) 50%, transparent 70%);
+            animation: gradient-shift 15s ease infinite;
         }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: -1;
+
+        @keyframes gradient-shift {
+            0%, 100% { transform: translateX(-50%) translateY(-50%); }
+            50% { transform: translateX(50%) translateY(50%); }
         }
-        
+
         .hero-content {
             max-width: 900px;
             padding: 2rem;
             z-index: 1;
+            position: relative;
         }
-        
+
         .eyebrow {
             font-size: 0.9rem;
             letter-spacing: 2px;
@@ -155,7 +154,7 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
         }
-        
+
         .hero h1 {
             font-size: 4rem;
             font-weight: 900;
@@ -163,78 +162,78 @@
             line-height: 1.1;
             text-shadow: 0 2px 10px rgba(0,0,0,0.7);
         }
-        
+
         .hero h1 .highlight {
             color: var(--cyan);
             text-shadow: 0 0 20px rgba(0,191,255,0.8);
         }
-        
+
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
             text-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
-        
+
         .hero-ctas {
             display: flex;
             gap: 1rem;
             justify-content: center;
             margin-bottom: 3rem;
         }
-        
+
         .hero-stats {
             display: flex;
             gap: 3rem;
             justify-content: center;
             margin-top: 3rem;
         }
-        
+
         .stat {
             text-align: center;
         }
-        
+
         .stat-number {
             font-size: 2rem;
             font-weight: 800;
             color: var(--cyan);
         }
-        
+
         .stat-label {
             font-size: 0.9rem;
             opacity: 0.9;
         }
-        
+
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        
+
         section {
             padding: 5rem 0;
         }
-        
+
         h2 {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 3rem;
             text-align: center;
         }
-        
+
         /* Trusted By Section */
         .trusted-by {
             background: var(--light-bg);
             text-align: center;
         }
-        
+
         .logos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .logo-box {
             background: white;
             padding: 2rem;
@@ -243,14 +242,14 @@
             color: var(--gray);
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        
+
         /* Value Props */
         .value-props {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .value-card {
             padding: 2rem;
             background: white;
@@ -258,34 +257,34 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
-        
+
         .value-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .value-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--cyan);
         }
-        
+
         /* How It Works */
         .how-it-works {
             background: var(--light-bg);
         }
-        
+
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .step {
             text-align: center;
             padding: 2rem;
         }
-        
+
         .step-number {
             width: 60px;
             height: 60px;
@@ -299,23 +298,23 @@
             font-weight: 800;
             margin: 0 auto 1rem;
         }
-        
+
         .step h3 {
             margin-bottom: 0.5rem;
         }
-        
+
         /* Pricing */
         .pricing {
             background: var(--light-bg);
         }
-        
+
         .pricing-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .pricing-card {
             background: white;
             padding: 2.5rem;
@@ -323,11 +322,11 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: relative;
         }
-        
+
         .pricing-card.popular {
             border: 3px solid var(--cyan);
         }
-        
+
         .popular-badge {
             position: absolute;
             top: -15px;
@@ -340,30 +339,30 @@
             font-size: 0.8rem;
             font-weight: 700;
         }
-        
+
         .price {
             font-size: 3rem;
             font-weight: 800;
             color: var(--dark);
             margin: 1rem 0;
         }
-        
+
         .price-small {
             font-size: 1.5rem;
             color: var(--gray);
         }
-        
+
         .features-list {
             list-style: none;
             margin: 2rem 0;
         }
-        
+
         .features-list li {
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
-        
+
         .features-list li:before {
             content: "✓";
             position: absolute;
@@ -371,24 +370,24 @@
             color: var(--success);
             font-weight: 800;
         }
-        
+
         /* FAQ */
         .faq {
             background: white;
         }
-        
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
             margin-bottom: 1rem;
             border: 1px solid #e5e7eb;
             border-radius: 8px;
             overflow: hidden;
         }
-        
+
         .faq-question {
             padding: 1.5rem;
             background: white;
@@ -398,23 +397,23 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .faq-question:hover {
             background: var(--light-bg);
         }
-        
+
         .faq-answer {
             padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s, padding 0.3s;
         }
-        
+
         .faq-item.active .faq-answer {
             padding: 1.5rem;
             max-height: 500px;
         }
-        
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
@@ -422,18 +421,18 @@
             text-align: center;
             padding: 5rem 2rem;
         }
-        
+
         .cta-section h2 {
             color: white;
         }
-        
+
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
             padding: 3rem 2rem 1rem;
         }
-        
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -442,34 +441,34 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         .footer-section h4 {
             margin-bottom: 1rem;
             color: var(--cyan);
         }
-        
+
         .footer-section ul {
             list-style: none;
         }
-        
+
         .footer-section a {
             color: #9ca3af;
             text-decoration: none;
             display: block;
             padding: 0.25rem 0;
         }
-        
+
         .footer-section a:hover {
             color: white;
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid #374151;
             color: #9ca3af;
         }
-        
+
         /* Modal */
         .modal {
             display: none;
@@ -483,11 +482,11 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .modal.active {
             display: flex;
         }
-        
+
         .modal-content {
             background: white;
             padding: 3rem;
@@ -497,29 +496,29 @@
             max-height: 90vh;
             overflow-y: auto;
         }
-        
+
         .close-modal {
             float: right;
             font-size: 2rem;
             cursor: pointer;
             color: var(--gray);
         }
-        
+
         .close-modal:hover {
             color: var(--dark);
         }
-        
+
         /* Form Styles */
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
-        
+
         input, select, textarea {
             width: 100%;
             padding: 0.75rem;
@@ -528,38 +527,38 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-        
+
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--cyan);
         }
-        
+
         textarea {
             resize: vertical;
             min-height: 100px;
         }
-        
+
         .error-message {
             color: var(--error);
             font-size: 0.875rem;
             margin-top: 0.25rem;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-stats {
                 flex-direction: column;
                 gap: 1.5rem;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
+
             h2 {
                 font-size: 2rem;
             }
@@ -581,12 +580,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Animated Gradient (NO VIDEO) -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Axle-App-8-second-video.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="eyebrow">THE PREMIUM B2B TRANSPORTATION NETWORK</div>
             <h1>Connect. <span class="highlight">Verify.</span> Deliver.</h1>
@@ -687,7 +682,7 @@
                     </ul>
                     <button class="btn btn-primary" onclick="openModal('carrier')">Get Started</button>
                 </div>
-                
+
                 <div class="pricing-card popular">
                     <div class="popular-badge">MOST POPULAR</div>
                     <h3>Premium</h3>
@@ -702,7 +697,7 @@
                     </ul>
                     <button class="btn btn-primary" onclick="openModal('carrier')">Start Free Trial</button>
                 </div>
-                
+
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
                     <div class="price">Custom</div>
@@ -734,7 +729,7 @@
                         You need a minimum of $2M in general liability insurance, valid operating authority, and current DOT certification. Our verification team will review your documentation during signup.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         How long does verification take?
@@ -744,7 +739,7 @@
                         Most carriers are approved within 48 hours. If we need additional documentation, we'll reach out immediately.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         Can Axle integrate with our existing TMS?
@@ -754,7 +749,7 @@
                         Yes. Our RESTful API integrates with major TMS platforms including SAP, Oracle, and custom systems. Our integration team handles the setup during onboarding.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         Is my data secure?
@@ -926,12 +921,12 @@
         // Form submission
         function handleFormSubmit(event, type) {
             event.preventDefault();
-            
+
             // Collect form data
             const formData = {};
             const form = event.target;
             const inputs = form.querySelectorAll('input, select, textarea');
-            
+
             inputs.forEach(input => {
                 if (input.value) {
                     formData[input.id] = input.value;
@@ -940,7 +935,7 @@
 
             // Log to console (replace with actual API call)
             console.log('Form submitted:', type, formData);
-            
+
             // Save to localStorage
             const leads = JSON.parse(localStorage.getItem('axle_leads') || '[]');
             leads.push({
@@ -952,7 +947,7 @@
 
             // Show success message
             alert('Thank you! We\'ll be in touch within 24 hours.');
-            
+
             // Close modal and reset form
             closeModal(type);
             form.reset();
@@ -964,15 +959,6 @@
                 event.target.classList.remove('active');
             }
         }
-
-        // Video error handling
-        const video = document.querySelector('.hero-video');
-        video.addEventListener('error', function() {
-            console.error('Video failed to load');
-        });
-        video.addEventListener('loadeddata', function() {
-            console.log('Video loaded successfully');
-        });
     </script>
 </body>
 </html>
