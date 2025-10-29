@@ -1,722 +1,978 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axle Technologies - Where Enterprise Meets the Road™</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Axle: The premium B2B platform connecting verified charter buses, freight carriers, and professional drivers with enterprise clients. Where Enterprise Meets the Road™">
+    <meta name="keywords" content="freight broker, charter bus, transportation platform, logistics, fleet management, carrier verification">
+    <meta property="og:title" content="Axle - Where Enterprise Meets the Road™">
+    <meta property="og:description" content="Connect. Verify. Deliver. The premium platform for verified transportation logistics.">
+    <meta property="og:type" content="website">
+    <title>Axle - Where Enterprise Meets the Road™</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cyan: #00bfff;
+            --dark: #1a1a2e;
+            --light-bg: #f0f8ff;
+            --gray: #6b7280;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--cyan);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0099cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+        
+        /* Hero Section with Video Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            z-index: 1;
+        }
+        
+        .eyebrow {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .hero h1 .highlight {
+            color: var(--cyan);
+            text-shadow: 0 0 20px rgba(0,191,255,0.8);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--cyan);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        /* Trusted By Section */
+        .trusted-by {
+            background: var(--light-bg);
+            text-align: center;
+        }
+        
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .logo-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: var(--gray);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Value Props */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--cyan);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: var(--light-bg);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--cyan);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background: var(--light-bg);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid var(--cyan);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--cyan);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 1rem 0;
+        }
+        
+        .price-small {
+            font-size: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 800;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--cyan);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .close-modal:hover {
+            color: var(--dark);
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .error-message {
+            color: var(--error);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Urgency Banner -->
-  <div class="top-banner" id="topBanner"><span>Limited Time: Lock in early adopter pricing – First 100 carriers only</span><button class="banner-close" id="bannerClose" aria-label="Dismiss banner">&times;</button></div>
-  <!-- Navigation -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-container">
-      <div class="nav-logo">AXLE</div>
-      <div class="nav-links">
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#carriers" class="nav-link">For Carriers</a>
-        <a href="#enterprise" class="nav-link">For Enterprise</a>
-      </div>
-      <button class="btn btn-primary" id="headerSignupBtn">Sign Up &amp; Get Vetted</button>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Axle.</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="btn btn-primary" onclick="openModal('signup')">Get Started</button>
+        </div>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <!-- Video Background -->
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="Axle-App-8-second-video.mp4" type="video/mp4">
-    </video>
-    <!-- Dark Overlay -->
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-super">THE PREMIUM B2B TRANSPORTATION NETWORK</p>
-        <h1 class="hero-headline">
-          <span class="hero-word">Connect.</span>
-          <span class="hero-word hero-word-cyan">Verify.</span>
-          <span class="hero-word">Deliver.</span>
-        </h1>
-        <p class="hero-subheadline">Where Enterprise Meets the Road™ — The premium platform connecting verified charter buses, freight carriers, and professional drivers with enterprise clients.</p>
-        <div class="hero-ctas">
-          <button class="btn btn-primary btn-lg" id="enterpriseCta">Book a Charter or Freight Contract</button>
-          <button class="btn btn-outline btn-lg" id="carrierCta">Join the Verified Carrier Network</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Axle-App-8-second-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="eyebrow">THE PREMIUM B2B TRANSPORTATION NETWORK</div>
+            <h1>Connect. <span class="highlight">Verify.</span> Deliver.</h1>
+            <p>Where Enterprise Meets the Road™ — The premium platform connecting verified charter buses, freight carriers, and professional drivers with enterprise clients.</p>
+            <div class="hero-ctas">
+                <button class="btn btn-primary" onclick="openModal('demo')">Book a Demo</button>
+                <button class="btn btn-outline" onclick="openModal('carrier')">Join as Carrier</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">1,500+</div>
+                    <div class="stat-label">Verified Carriers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$50M+</div>
+                    <div class="stat-label">Contracts Processed</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Value Propositions -->
-  <section class="value-props" id="features">
-    <div class="container">
-      <div class="value-grid">
-        <div class="value-card fade-in">
-          <div class="value-icon">✓</div>
-          <h3 class="value-title">Verified Carriers</h3>
-          <p class="value-desc">All charter buses and freight carriers thoroughly vetted for safety and compliance</p>
+    <!-- Trusted By -->
+    <section class="trusted-by">
+        <div class="container">
+            <h2>Trusted by Industry Leaders</h2>
+            <div class="logos">
+                <div class="logo-box">ABC Logistics</div>
+                <div class="logo-box">Global Freight Co</div>
+                <div class="logo-box">Metro Charter</div>
+                <div class="logo-box">Enterprise Transport</div>
+            </div>
         </div>
-        <div class="value-card fade-in">
-          <div class="value-icon">🏢</div>
-          <h3 class="value-title">Enterprise Grade</h3>
-          <p class="value-desc">Built for Fortune 500 operations with enterprise-level security and compliance</p>
-        </div>
-        <div class="value-card fade-in">
-          <div class="value-icon">👥</div>
-          <h3 class="value-title">Professional Network</h3>
-          <p class="value-desc">Access to top-tier professional drivers and premium fleet operators</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features Section -->
-  <section class="features" id="carriers">
-    <div class="container">
-      <h2 class="section-title">Platform Features</h2>
-      <div class="features-grid">
-        <div class="feature-card fade-in">
-          <div class="feature-icon">📍</div>
-          <h3 class="feature-title">Real-time Fleet Tracking</h3>
-          <p class="feature-desc">Monitor your entire fleet with GPS tracking and live updates</p>
+    <!-- Value Propositions -->
+    <section id="features">
+        <div class="container">
+            <h2>Why Choose Axle</h2>
+            <div class="value-props">
+                <div class="value-card">
+                    <h3>Verified Carriers</h3>
+                    <p>All charter buses and freight carriers thoroughly vetted for safety and compliance with $2M+ insurance verification.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Enterprise Grade</h3>
+                    <p>Built for Fortune 500 operations with enterprise-level security, compliance, and SOC 2 certification.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Professional Network</h3>
+                    <p>Access to top-tier professional drivers and premium fleet operators nationwide.</p>
+                </div>
+            </div>
         </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">📋</div>
-          <h3 class="feature-title">Compliance Documentation</h3>
-          <p class="feature-desc">Automated DOT compliance, insurance verification, and safety records</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">⚡</div>
-          <h3 class="feature-title">Instant Booking &amp; Dispatch</h3>
-          <p class="feature-desc">Book verified carriers and dispatch drivers in seconds</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">💰</div>
-          <h3 class="feature-title">Enterprise Billing &amp; Invoicing</h3>
-          <p class="feature-desc">Consolidated invoicing, PO management, and flexible payment terms</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">📞</div>
-          <h3 class="feature-title">24/7 Dedicated Support</h3>
-          <p class="feature-desc">White-glove support team available around the clock</p>
-        </div>
-        <div class="feature-card fade-in">
-          <div class="feature-icon">🔌</div>
-          <h3 class="feature-title">API Integration Ready</h3>
-          <p class="feature-desc">Seamless integration with your existing enterprise systems</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Social Proof Stats -->
-  <section class="social-proof">
-    <div class="container">
-      <div class="social-stats">
-        <div class="social-stat">
-          <span class="stat-big counter" data-target="1500">0</span>
-          <span>Verified Carriers</span>
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works for Enterprise</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Request Demo</h3>
+                    <p>Schedule a 30-minute consultation with our enterprise team</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Onboard Fleet</h3>
+                    <p>Integrate with your systems via API or dashboard</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Track & Optimize</h3>
+                    <p>Monitor compliance and optimize logistics in real-time</p>
+                </div>
+            </div>
         </div>
-        <div class="social-stat">
-          <span class="stat-big counter" data-target="75">0</span>
-          <span>Enterprise Clients</span>
-        </div>
-        <div class="social-stat">
-          <span class="stat-big">$50M+</span>
-          <span>Contracts Processed</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Trust Section -->
-  <section class="trust" id="enterprise">
-    <div class="container">
-      <h2 class="section-title">Trusted by Industry Leaders</h2>
-      <div class="trust-logos">
-        <div class="trust-logo-box">ABC Logistics</div>
-        <div class="trust-logo-box">Global Freight Co.</div>
-        <div class="trust-logo-box">Metro Charter</div>
-        <div class="trust-logo-box">Enterprise Transport</div>
-        <div class="trust-logo-box">Summit Carriers</div>
-        <div class="trust-logo-box">National Fleet Services</div>
-        <div class="trust-logo-box">Premier Logistics Group</div>
-        <div class="trust-logo-box">TransContinental Freight</div>
-      </div>
-    </div>
-  </section>
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <div class="price">$99<span class="price-small">/mo</span></div>
+                    <p>15% transaction fee</p>
+                    <ul class="features-list">
+                        <li>Essential compliance tools</li>
+                        <li>Access to all contracts</li>
+                        <li>Standard support</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('carrier')">Get Started</button>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>Premium</h3>
+                    <div class="price">$599<span class="price-small">/mo</span></div>
+                    <p>8% transaction fee</p>
+                    <ul class="features-list">
+                        <li>Everything in Standard</li>
+                        <li>Priority contract matching</li>
+                        <li>AI-powered tools</li>
+                        <li>Enhanced visibility</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('carrier')">Start Free Trial</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p>Contact sales</p>
+                    <ul class="features-list">
+                        <li>Volume discounts</li>
+                        <li>API integration</li>
+                        <li>White-glove onboarding</li>
+                        <li>SOC 2 compliance</li>
+                        <li>SLA guarantees</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('demo')">Book Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- STATS BAR -->
-<section class="stats-bar fade-in" id="statsBar">
-  <div class="container stats-grid">
-    <div class="stat">
-      <span class="stat-number counter" data-target="99.8" data-float="true">0</span>
-      <span class="stat-label">Uptime</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number counter" data-target="2000000">0</span>
-      <span class="stat-label">$ Insurance Verified</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number counter" data-target="5">0</span>
-      <span class="stat-label">&lt; 5 min Booking Time</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number counter" data-target="24">0</span>
-      <span class="stat-label">/7 Support</span>
-    </div>
-  </div>
-</section>
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What insurance do I need to join Axle?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You need a minimum of $2M in general liability insurance, valid operating authority, and current DOT certification. Our verification team will review your documentation during signup.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How long does verification take?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Most carriers are approved within 48 hours. If we need additional documentation, we'll reach out immediately.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Can Axle integrate with our existing TMS?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. Our RESTful API integrates with major TMS platforms including SAP, Oracle, and custom systems. Our integration team handles the setup during onboarding.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Is my data secure?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. We use bank-level 256-bit encryption, SOC 2 Type II compliance, regular third-party security audits, and role-based access controls.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HOW IT WORKS - ENTERPRISE -->
-<section class="how-section fade-in" id="howEnterprise">
-  <div class="container">
-    <h2 class="section-title">How It Works for Enterprise Clients</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <span class="step-number">1</span>
-        <h3>Request a Demo</h3>
-        <p>Schedule a 30-minute consultation with our enterprise team.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">2</span>
-        <h3>Onboard Your Fleet</h3>
-        <p>Integrate with your existing systems via our API or dashboard.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">3</span>
-        <h3>Track &amp; Optimize</h3>
-        <p>Monitor compliance, track costs, and optimize logistics in real-time.</p>
-      </div>
-    </div>
-    <p class="timeline">Get started in under 48 hours</p>
-  </div>
-</section>
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Fleet Operations?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join 1,500+ carriers and 75+ enterprises using Axle</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn btn-primary" onclick="openModal('demo')">Book a Demo</button>
+                <button class="btn btn-outline" onclick="openModal('carrier')">Start Free Trial</button>
+            </div>
+        </div>
+    </section>
 
-<!-- HOW IT WORKS - CARRIERS -->
-<section class="how-section fade-in" id="howCarriers">
-  <div class="container">
-    <h2 class="section-title">How It Works for Carriers</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <span class="step-number">1</span>
-        <h3>Sign Up &amp; Verify</h3>
-        <p>Complete your profile and submit insurance verification.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">2</span>
-        <h3>Get Approved</h3>
-        <p>Our compliance team reviews your application within 48 hours.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">3</span>
-        <h3>Start Earning</h3>
-        <p>Access high-value contracts and get guaranteed payments.</p>
-      </div>
-    </div>
-    <p class="timeline">Start booking contracts in 3 days</p>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Axle Technologies, Inc. All rights reserved.</p>
+            <p>Where Enterprise Meets the Road™</p>
+        </div>
+    </footer>
 
-<!-- PRODUCT SCREENSHOTS -->
-<section class="screenshots fade-in" id="screenshots">
-  <div class="container">
-    <h2 class="section-title">See Axle in Action</h2>
-    <div class="tab-controls">
-      <button class="screenshot-tab active" data-tab="carrier">Carrier Dashboard</button>
-      <button class="screenshot-tab" data-tab="enterprise">Enterprise Control Center</button>
-      <button class="screenshot-tab" data-tab="tracking">Real-Time Tracking</button>
+    <!-- Modals -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('demo')">&times;</span>
+            <h2>Book a Demo</h2>
+            <form onsubmit="handleFormSubmit(event, 'demo')">
+                <div class="form-group">
+                    <label for="demo-name">Full Name *</label>
+                    <input type="text" id="demo-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-email">Email *</label>
+                    <input type="email" id="demo-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-company">Company Name *</label>
+                    <input type="text" id="demo-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-phone">Phone</label>
+                    <input type="tel" id="demo-phone">
+                </div>
+                <div class="form-group">
+                    <label for="demo-message">Tell us about your needs</label>
+                    <textarea id="demo-message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request Demo</button>
+            </form>
+        </div>
     </div>
-    <div class="tab-panels">
-      <img src="https://dummyimage.com/900x500/f0f0f0/000&amp;text=Carrier+Dashboard" alt="Carrier Dashboard" class="screenshot-img active" data-tab="carrier">
-      <img src="https://dummyimage.com/900x500/d0d0d0/000&amp;text=Enterprise+Control+Center" alt="Enterprise Control Center" class="screenshot-img" data-tab="enterprise">
-      <img src="https://dummyimage.com/900x500/e0e0e0/000&amp;text=Real-Time+Tracking" alt="Real-Time Tracking" class="screenshot-img" data-tab="tracking">
+
+    <div id="carrierModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('carrier')">&times;</span>
+            <h2>Join as a Carrier</h2>
+            <form onsubmit="handleFormSubmit(event, 'carrier')">
+                <div class="form-group">
+                    <label for="carrier-name">Full Name *</label>
+                    <input type="text" id="carrier-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-email">Email *</label>
+                    <input type="email" id="carrier-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-company">Company/Fleet Name *</label>
+                    <input type="text" id="carrier-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-fleet-type">Fleet Type *</label>
+                    <select id="carrier-fleet-type" required>
+                        <option value="">Select...</option>
+                        <option value="charter">Charter Buses</option>
+                        <option value="freight">Freight Carriers</option>
+                        <option value="both">Both</option>
+                        <option value="owner-op">Owner-Operator</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-vehicles">Number of Vehicles *</label>
+                    <select id="carrier-vehicles" required>
+                        <option value="">Select...</option>
+                        <option value="1-5">1-5</option>
+                        <option value="6-20">6-20</option>
+                        <option value="21-50">21-50</option>
+                        <option value="50+">50+</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Get Vetted & Join</button>
+            </form>
+        </div>
     </div>
-  </div>
-</section>
 
-<!-- CASE STUDY -->
-<section class="case-study fade-in" id="caseStudy">
-  <div class="container">
-    <h2 class="section-title">How Enterprise Clients Save 30% on Transportation Costs</h2>
-    <div class="case-card">
-      <h3>Fortune 500 Manufacturing Company</h3>
-      <p><strong>Challenge:</strong> Managing 200+ freight carriers manually, compliance gaps, inconsistent pricing.</p>
-      <p><strong>Solution:</strong> Implemented Axle platform for automated carrier vetting and centralized booking.</p>
-      <div class="case-results">
-        <div class="case-result">
-          <span class="num">30%</span>
-          <p>Cost Reduction</p>
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signup')">&times;</span>
+            <h2>Get Started</h2>
+            <p style="margin-bottom: 2rem;">Choose your account type:</p>
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;" onclick="closeModal('signup'); openModal('demo');">I'm an Enterprise Client</button>
+            <button class="btn btn-outline" style="width: 100%; color: var(--dark); border-color: var(--dark);" onclick="closeModal('signup'); openModal('carrier');">I'm a Carrier</button>
         </div>
-        <div class="case-result">
-          <span class="num">200</span>
-          <p>Hours Saved / Month</p>
-        </div>
-        <div class="case-result">
-          <span class="num">100%</span>
-          <p>Compliance Rate</p>
-        </div>
-        <div class="case-result">
-          <span class="num">50+</span>
-          <p>Carriers Onboarded</p>
-        </div>
-      </div>
-      <button class="btn btn-primary btn-lg mt-8" id="readCaseStudy">Read Full Case Study</button>
     </div>
-  </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials fade-in" id="testimonials">
-  <div class="container">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonial-carousel" id="testimonialCarousel">
-      <div class="testimonial-card active">
-        <p class="testimonial-quote">&quot;Axle reduced our transportation costs by 30% while improving compliance. The platform pays for itself within the first month.&quot;</p>
-        <div class="testimonial-author">
-          <img src="https://dummyimage.com/80x80/cccccc/ffffff&amp;text=SJ" alt="Sarah Johnson" class="testimonial-avatar">
-          <div>
-            <strong>Sarah Johnson</strong><br>
-            <span>VP of Logistics, Fortune 500 Manufacturing</span>
-          </div>
-        </div>
-        <div class="testimonial-stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">&quot;Premium membership unlocked high-value contracts we&amp;#39;d never have access to. The AI tools save me 10+ hours per week.&quot;</p>
-        <div class="testimonial-author">
-          <img src="https://dummyimage.com/80x80/cccccc/ffffff&amp;text=MR" alt="Mike Rodriguez" class="testimonial-avatar">
-          <div>
-            <strong>Mike Rodriguez</strong><br>
-            <span>Owner, Rodriguez Freight Services</span>
-          </div>
-        </div>
-        <div class="testimonial-stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">&quot;Real-time compliance tracking gives us peace of mind. Enterprise clients trust us more knowing we&amp;#39;re on Axle&amp;#39;s verified network.&quot;</p>
-        <div class="testimonial-author">
-          <img src="https://dummyimage.com/80x80/cccccc/ffffff&amp;text=JC" alt="Jennifer Chen" class="testimonial-avatar">
-          <div>
-            <strong>Jennifer Chen</strong><br>
-            <span>Fleet Manager, Metro Charter Group</span>
-          </div>
-        </div>
-        <div class="testimonial-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="carousel-controls">
-      <button id="prevTestimonial" aria-label="Previous testimonial">‹</button>
-      <button id="nextTestimonial" aria-label="Next testimonial">›</button>
-    </div>
-    <div class="video-testimonial mt-8">
-      <div class="video-placeholder" id="videoPlaceholder">Watch Sarah&#39;s Story (3:00)</div>
-    </div>
-  </div>
-</section>
+    <script>
+        // Modal functions
+        function openModal(type) {
+            document.getElementById(type + 'Modal').classList.add('active');
+        }
 
-<!-- PRICING -->
-<section class="pricing fade-in" id="pricing">
-  <div class="container">
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
-    <div id="countdownWrap" class="countdown">Early pricing ends in: <span id="countdown"></span></div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Standard (Carrier)</h3>
-        <p class="price">$99<span>/month &amp;plus; 15% fee</span></p>
-        <ul class="pricing-features">
-          <li>Essential compliance tools</li>
-          <li>Access to all contracts</li>
-          <li>Standard support</li>
-          <li>Basic analytics</li>
-        </ul>
-        <button class="btn btn-outline btn-lg" id="carrierStandardCta">Get Started</button>
-      </div>
-      <div class="pricing-card popular">
-        <h3>Premium (Carrier)</h3>
-        <p class="price">$599<span>/month &amp;plus; 8% fee</span></p>
-        <ul class="pricing-features">
-          <li>Everything in Standard</li>
-          <li>Priority contract matching</li>
-          <li>AI-powered tools</li>
-          <li>Enhanced profile visibility</li>
-          <li>Dedicated account manager</li>
-          <li>Advanced analytics</li>
-        </ul>
-        <button class="btn btn-primary btn-lg" id="carrierPremiumCta">Start Free Trial</button>
-      </div>
-      <div class="pricing-card">
-        <h3>Enterprise</h3>
-        <p class="price">Custom</p>
-        <ul class="pricing-features">
-          <li>Volume discounts</li>
-          <li>API integration</li>
-          <li>White-glove onboarding</li>
-          <li>SOC 2 compliance</li>
-          <li>SLA guarantees</li>
-          <li>Dedicated success team</li>
-        </ul>
-        <button class="btn btn-outline btn-lg" id="enterprisePricingCta">Book a Demo</button>
-      </div>
-    </div>
-    <p class="guarantee mt-8">All plans include 30-day money-back guarantee</p>
-  </div>
-</section>
+        function closeModal(type) {
+            document.getElementById(type + 'Modal').classList.remove('active');
+        }
 
-<!-- FAQ -->
-<section class="faq fade-in" id="faq">
-  <div class="container">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <div class="faq-question">What insurance do I need to join Axle?<span>&plus;</span></div>
-        <div class="faq-answer">You need a minimum of $2M in general liability insurance, valid operating authority, and current DOT certification. Our verification team will review your documentation during signup.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How do you verify carriers?<span>&plus;</span></div>
-        <div class="faq-answer">Every carrier undergoes insurance verification, DOT authority checks, safety rating reviews, and background checks. We re-verify insurance weekly and monitor compliance continuously.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How long does verification take?<span>&plus;</span></div>
-        <div class="faq-answer">Most carriers are approved within 48 hours. If we need additional documentation, we&apos;ll reach out immediately. You&apos;ll receive email notifications at each step.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Can Axle integrate with our existing TMS?<span>&plus;</span></div>
-        <div class="faq-answer">Yes. Our RESTful API integrates with major TMS platforms including SAP, Oracle, and custom systems. Our integration team handles the setup during onboarding.</div>
-      </div>
-    </div>
-    <p class="mt-8 text-center">Still have questions? <a href="#" id="chatLink">Chat with us</a></p>
-  </div>
-</section>
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+            const symbol = element.querySelector('span');
+            symbol.textContent = item.classList.contains('active') ? '−' : '+';
+        }
 
-<!-- TRUST & COMPLIANCE -->
-<section class="trust-compliance fade-in" id="trustCompliance">
-  <div class="container">
-    <h2 class="section-title">Enterprise-Grade Security &amp; Compliance</h2>
-    <div class="badge-grid">
-      <div class="badge">FMCSA Registered Broker</div>
-      <div class="badge">SOC 2 Type II (In Progress)</div>
-      <div class="badge">SSL 256-bit Encryption</div>
-      <div class="badge">$2M+ Insurance Verified</div>
-      <div class="badge">GDPR Compliant</div>
-      <div class="badge">PCI DSS Compliant</div>
-    </div>
-    <ul class="pricing-features mt-8" style="max-width:700px;margin:2rem auto;">
-      <li>Bank-level encryption</li>
-      <li>Regular third-party audits</li>
-      <li>Role-based access control</li>
-      <li>24/7 security monitoring</li>
-    </ul>
-  </div>
-</section>
+        // Form submission
+        function handleFormSubmit(event, type) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = {};
+            const form = event.target;
+            const inputs = form.querySelectorAll('input, select, textarea');
+            
+            inputs.forEach(input => {
+                if (input.value) {
+                    formData[input.id] = input.value;
+                }
+            });
 
-<!-- CTA / Contact Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="cta-title">Ready to modernize your fleet operations?</h2>
-      <div class="cta-buttons">
-        <button class="btn btn-primary btn-lg" id="finalEnterpriseCta">Book a Demo</button>
-        <button class="btn btn-outline btn-lg" id="finalCarrierCta">Start Free Trial</button>
-      </div>
-      <form class="email-capture-form" id="emailCaptureForm">
-        <input type="email" class="email-input" id="quickEmail" placeholder="Enter your email to get early access" required>
-        <button type="submit" class="btn btn-primary">Get Started</button>
-      </form>
-      <div class="email-success" id="emailSuccess">Thanks! You're on the list.</div>
-    </div>
-  </section>
+            // Log to console (replace with actual API call)
+            console.log('Form submitted:', type, formData);
+            
+            // Save to localStorage
+            const leads = JSON.parse(localStorage.getItem('axle_leads') || '[]');
+            leads.push({
+                type: type,
+                timestamp: new Date().toISOString(),
+                data: formData
+            });
+            localStorage.setItem('axle_leads', JSON.stringify(leads));
 
-  <!-- Footer -->
-  <footer class="footer" id="resources">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-col">
-          <h4 class="footer-heading">Axle Technologies</h4>
-          <p class="footer-mission">The premium platform connecting verified charter buses, freight carriers, and professional drivers with enterprise clients.</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Product</h4>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#howEnterprise">How It Works</a>
-          <a href="#">API Docs</a>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Company</h4>
-          <a href="#">About</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
-          <a href="#">Blog</a>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Resources</h4>
-          <a href="#caseStudy">Case Studies</a>
-          <a href="#faq">FAQs</a>
-          <a href="#">Help Center</a>
-          <a href="#">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Legal</h4>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#trustCompliance">Security</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">Copyright &copy; 2025 Axle Technologies, Inc. All Rights Reserved.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn" target="_blank">in</a>
-          <a href="#" aria-label="Twitter" target="_blank">tw</a>
-          <a href="#" aria-label="Facebook" target="_blank">fb</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+            // Show success message
+            alert('Thank you! We\'ll be in touch within 24 hours.');
+            
+            // Close modal and reset form
+            closeModal(type);
+            form.reset();
+        }
 
-  <!-- Floating Action Menu -->
-  <div class="fab" id="fab">
-    <button class="fab-btn" id="fabBtn" aria-label="Quick actions">+</button>
-  </div>
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
 
-  <!-- Modal: Choice -->
-  <div class="modal" id="choiceModal" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" id="choiceBackdrop"></div>
-    <div class="modal-content modal-choice">
-      <button class="modal-close" id="choiceClose" aria-label="Close">&times;</button>
-      <h2 class="modal-title">Join Axle</h2>
-      <div class="choice-grid">
-        <button class="choice-card" id="choiceEnterprise">
-          <div class="choice-icon">🏢</div>
-          <h3>I'm an Enterprise Client</h3>
-          <p>Book charter or freight services</p>
-        </button>
-        <button class="choice-card" id="choiceCarrier">
-          <div class="choice-icon">🚚</div>
-          <h3>I'm a Carrier</h3>
-          <p>Join our verified network</p>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Enterprise Lead Form -->
-  <div class="modal" id="enterpriseModal" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" id="enterpriseBackdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close" id="enterpriseClose" aria-label="Close">&times;</button>
-      <h2 class="modal-title">Request a Demo</h2>
-      <form class="form" id="enterpriseForm">
-        <div class="form-group">
-          <label for="entName" class="form-label">Full Name *</label>
-          <div class="input-wrapper">
-            <input type="text" id="entName" class="form-input" required minlength="2">
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="entNameError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="entEmail" class="form-label">Email *</label>
-          <div class="input-wrapper">
-            <input type="email" id="entEmail" class="form-input" required>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="entEmailError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="entCompany" class="form-label">Company Name *</label>
-          <div class="input-wrapper">
-            <input type="text" id="entCompany" class="form-input" required>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="entCompanyError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="entPhone" class="form-label">Phone Number</label>
-          <div class="input-wrapper">
-            <input type="tel" id="entPhone" class="form-input phone-input">
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="entPhoneError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="entFleetSize" class="form-label">Fleet Size / Contract Volume *</label>
-          <div class="input-wrapper">
-            <select id="entFleetSize" class="form-input" required>
-              <option value="">Select...</option>
-              <option value="1-10 vehicles">1-10 vehicles</option>
-              <option value="11-50 vehicles">11-50 vehicles</option>
-              <option value="51-100 vehicles">51-100 vehicles</option>
-              <option value="100+ vehicles">100+ vehicles</option>
-              <option value="Freight only">Freight only</option>
-            </select>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="entFleetSizeError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="entMessage" class="form-label">Message / Requirements</label>
-          <textarea id="entMessage" class="form-input" rows="4"></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary btn-full" id="enterpriseSubmit">
-          <span class="btn-text">Request Demo</span>
-          <span class="btn-spinner"></span>
-        </button>
-      </form>
-      <div class="form-success" id="enterpriseSuccess">
-        Thank you! Your demo request has been received. Our enterprise team will contact you within 24 hours.
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Carrier Signup Form -->
-  <div class="modal" id="carrierModal" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" id="carrierBackdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close" id="carrierClose" aria-label="Close">&times;</button>
-      <h2 class="modal-title">Join the Carrier Network</h2>
-      <form class="form" id="carrierForm">
-        <div class="form-group">
-          <label for="carName" class="form-label">Full Name *</label>
-          <div class="input-wrapper">
-            <input type="text" id="carName" class="form-input" required minlength="2">
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carNameError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carEmail" class="form-label">Email *</label>
-          <div class="input-wrapper">
-            <input type="email" id="carEmail" class="form-input" required>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carEmailError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carCompany" class="form-label">Company / Fleet Name *</label>
-          <div class="input-wrapper">
-            <input type="text" id="carCompany" class="form-input" required>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carCompanyError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carPhone" class="form-label">Phone Number</label>
-          <div class="input-wrapper">
-            <input type="tel" id="carPhone" class="form-input phone-input">
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carPhoneError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carFleetType" class="form-label">Fleet Type *</label>
-          <div class="input-wrapper">
-            <select id="carFleetType" class="form-input" required>
-              <option value="">Select...</option>
-              <option value="Charter Buses">Charter Buses</option>
-              <option value="Freight Carriers">Freight Carriers</option>
-              <option value="Both">Both</option>
-              <option value="Owner-Operator">Owner-Operator</option>
-            </select>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carFleetTypeError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carVehicleCount" class="form-label">Number of Vehicles *</label>
-          <div class="input-wrapper">
-            <select id="carVehicleCount" class="form-input" required>
-              <option value="">Select...</option>
-              <option value="1-5">1-5</option>
-              <option value="6-20">6-20</option>
-              <option value="21-50">21-50</option>
-              <option value="50+">50+</option>
-            </select>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carVehicleCountError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carDOT" class="form-label">DOT Number</label>
-          <div class="input-wrapper">
-            <input type="text" id="carDOT" class="form-input" pattern="[0-9]*">
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carDOTError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carInsurance" class="form-label">Insurance Coverage Amount *</label>
-          <div class="input-wrapper">
-            <select id="carInsurance" class="form-input" required>
-              <option value="">Select...</option>
-              <option value="$1M">$1M</option>
-              <option value="$2M">$2M</option>
-              <option value="$5M+">$5M+</option>
-            </select>
-            <span class="input-check">✓</span>
-          </div>
-          <span class="form-error" id="carInsuranceError"></span>
-        </div>
-        
-        <div class="form-group">
-          <label for="carMessage" class="form-label">Message</label>
-          <textarea id="carMessage" class="form-input" rows="4"></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary btn-full" id="carrierSubmit">
-          <span class="btn-text">Get Vetted &amp; Join</span>
-          <span class="btn-spinner"></span>
-        </button>
-      </form>
-      <div class="form-success" id="carrierSuccess">
-        Welcome to Axle! Check your email for next steps to complete verification. Our compliance team will review your application within 48 hours.
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notifications -->
-  <!-- Activity Feed -->
-  <div class="activity-feed" id="activityFeed">
-    <span id="activityText"></span>
-    <button class="activity-close" id="activityClose" aria-label="Dismiss notification">&times;</button>
-  </div>
-
-  <!-- Live Chat Widget -->
-  <div class="chat-widget" id="chatWidget">
-    <div class="chat-bubble" id="chatBubble" aria-label="Open live chat">💬</div>
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-header">
-        <span>Axle Live Chat</span>
-        <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
-      </div>
-      <div class="chat-messages" id="chatMessages"></div>
-      <div class="chat-quick-actions" id="chatQuickActions">
-        <button class="chat-action" data-action="enterprise">I&#39;m an enterprise client</button>
-        <button class="chat-action" data-action="carrier">I&#39;m a carrier</button>
-        <button class="chat-action" data-action="question">I have a question</button>
-      </div>
-      <form id="chatForm" class="chat-form">
-        <input type="text" id="chatInput" placeholder="Type your message..." aria-label="Type your message">
-        <button type="submit" aria-label="Send message">➤</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="toast" id="toast"></div>
-
-  <script src="app.js"></script>
+        // Video error handling
+        const video = document.querySelector('.hero-video');
+        video.addEventListener('error', function() {
+            console.error('Video failed to load');
+        });
+        video.addEventListener('loadeddata', function() {
+            console.log('Video loaded successfully');
+        });
+    </script>
 </body>
 </html>
