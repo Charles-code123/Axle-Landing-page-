@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Axle: The premium B2B platform connecting verified charter buses, freight carriers, and professional drivers with enterprise clients. Where Enterprise Meets the Road™">
+    <meta name="keywords" content="freight broker, charter bus, transportation platform, logistics, fleet management, carrier verification">
+    <meta property="og:title" content="Axle - Where Enterprise Meets the Road™">
+    <meta property="og:description" content="Connect. Verify. Deliver. The premium platform for verified transportation logistics.">
+    <meta property="og:type" content="website">
+    <title>Axle - Where Enterprise Meets the Road™</title>
+
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Axle.</div>
+            
+            <!-- Mobile Navigation Menu -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features" onclick="closeMenu()">Features</a></li>
+                <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
+                <li><a href="#how-it-works" onclick="closeMenu()">How It Works</a></li>
+                <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+            </ul>
+            
+            <!-- Desktop CTA Button -->
+            <button class="btn btn-primary nav-cta" onclick="openModal('signup')">Get Started</button>
+            
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Dark, Holographic Feel) -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">THE PREMIUM B2B TRANSPORTATION NETWORK</div>
+            <h1>Connect. <span class="highlight">Verify.</span> Deliver.</h1>
+            <p>Where Enterprise Meets the Road™ — The premium platform connecting verified charter buses, freight carriers, and professional drivers with enterprise clients.</p>
+            <div class="hero-ctas">
+                <button class="btn btn-primary" onclick="openModal('demo')">Book a Demo</button>
+                <!-- Using inline style for the Mandarin outline, referencing CSS variable -->
+                <button class="btn btn-outline" style="border-color: var(--accent-mandarin); color: var(--accent-mandarin); background: none;" onclick="openModal('carrier')">Join as Carrier</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">1,500+</div>
+                    <div class="stat-label">Verified Carriers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$50M+</div>
+                    <div class="stat-label">Contracts Processed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="trusted-by">
+        <div class="container">
+            <h2>Trusted by Industry Leaders</h2>
+            <div class="logos">
+                <div class="logo-box">ABC Logistics</div>
+                <div class="logo-box">Global Freight Co</div>
+                <div class="logo-box">Metro Charter</div>
+                <div class="logo-box">Enterprise Transport</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section id="features">
+        <div class="container">
+            <h2>Why Choose Axle</h2>
+            <div class="value-props">
+                <div class="value-card">
+                    <h3>Verified Carriers</h3>
+                    <p>All charter buses and freight carriers thoroughly vetted for safety and compliance with $2M+ insurance verification.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Enterprise Grade</h3>
+                    <p>Built for Fortune 500 operations with enterprise-level security, compliance, and SOC 2 certification.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Professional Network</h3>
+                    <p>Access to top-tier professional drivers and premium fleet operators nationwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section (Dark Background, Glassmorphism Effect) -->
+    <section class="testimonial">
+        <div class="container">
+            <h2>What Our Clients Say 🗣️</h2>
+            <div class="testimonial-content">
+                <blockquote>
+                    "Axle has revolutionized our logistics network. The carrier verification process alone saves us countless hours and significantly reduces risk. We saw a 20% increase in on-time deliveries within the first quarter."
+                </blockquote>
+                <div class="testimonial-author">
+                    <p>— **Sarah Chen**, Head of Logistics at *Global Freight Co*</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works for Enterprise</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Request Demo</h3>
+                    <p>Schedule a 30-minute consultation with our enterprise team</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Onboard Fleet</h3>
+                    <p>Integrate with your systems via API or dashboard</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Track & Optimize</h3>
+                    <p>Monitor compliance and optimize logistics in real-time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <div class="price">$99<span class="price-small">/mo</span></div>
+                    <p>15% transaction fee</p>
+                    <ul class="features-list">
+                        <li>Essential compliance tools</li>
+                        <li>Access to all contracts</li>
+                        <li>Standard support</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('carrier')">Get Started</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>Premium</h3>
+                    <div class="price">$599<span class="price-small">/mo</span></div>
+                    <p>8% transaction fee</p>
+                    <ul class="features-list">
+                        <li>Everything in Standard</li>
+                        <li>Priority contract matching</li>
+                        <li>AI-powered tools</li>
+                        <li>Enhanced visibility</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('carrier')">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p>Contact sales</p>
+                    <ul class="features-list">
+                        <li>Volume discounts</li>
+                        <li>API integration</li>
+                        <li>White-glove onboarding</li>
+                        <li>SOC 2 compliance</li>
+                        <li>SLA guarantees</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('demo')">Book Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What insurance do I need to join Axle?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You need a minimum of $2M in general liability insurance, valid operating authority, and current DOT certification. Our verification team will review your documentation during signup.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How long does verification take?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Most carriers are approved within 48 hours. If we need additional documentation, we'll reach out immediately.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Can Axle integrate with our existing TMS?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. Our RESTful API integrates with major TMS platforms including SAP, Oracle, and custom systems. Our integration team handles the setup during onboarding.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Is my data secure?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. We use bank-level 256-bit encryption, SOC 2 Type II compliance, regular third-party security audits, and role-based access controls.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Fleet Operations?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Join 1,500+ carriers and 75+ enterprises using Axle</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn btn-primary" onclick="openModal('demo')">Book a Demo</button>
+                <button class="btn btn-outline" style="border-color: var(--white); color: var(--white); background: none;" onclick="openModal('carrier')">Start Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <!-- Updated Contact Link -->
+                    <li><a href="#" onclick="event.preventDefault(); openModal('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Axle Technologies, Inc. All rights reserved.</p>
+            <p>Where Enterprise Meets the Road™</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('demo')">&times;</span>
+            <h2>Book a Demo</h2>
+            <form onsubmit="handleFormSubmit(event, 'demo')">
+                <div class="form-group">
+                    <label for="demo-name">Full Name *</label>
+                    <input type="text" id="demo-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-email">Email *</label>
+                    <input type="email" id="demo-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-company">Company Name *</label>
+                    <input type="text" id="demo-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-phone">Phone</label>
+                    <input type="tel" id="demo-phone">
+                </div>
+                <div class="form-group">
+                    <label for="demo-message">Tell us about your needs</label>
+                    <textarea id="demo-message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request Demo</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="carrierModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('carrier')">&times;</span>
+            <h2>Join as a Carrier</h2>
+            <form onsubmit="handleFormSubmit(event, 'carrier')">
+                <div class="form-group">
+                    <label for="carrier-name">Full Name *</label>
+                    <input type="text" id="carrier-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-email">Email *</label>
+                    <input type="email" id="carrier-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-company">Company/Fleet Name *</label>
+                    <input type="text" id="carrier-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-fleet-type">Fleet Type *</label>
+                    <select id="carrier-fleet-type" required>
+                        <option value="">Select...</option>
+                        <option value="charter">Charter Buses</option>
+                        <option value="freight">Freight Carriers</option>
+                        <option value="both">Both</option>
+                        <option value="owner-op">Owner-Operator</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="carrier-vehicles">Number of Vehicles *</label>
+                    <select id="carrier-vehicles" required>
+                        <option value="">Select...</option>
+                        <option value="1-5">1-5</option>
+                        <option value="6-20">6-20</option>
+                        <option value="21-50">21-50</option>
+                        <option value="50+">50+</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Get Vetted & Join</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- New Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('contact')">&times;</span>
+            <h2>Contact Axle Support</h2>
+            <form onsubmit="handleFormSubmit(event, 'support')">
+                <div class="form-group">
+                    <label for="contact-name">Full Name *</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-subject">Subject *</label>
+                    <select id="contact-subject" required>
+                        <option value="">Select a reason...</option>
+                        <option value="support">Technical Support</option>
+                        <option value="billing">Billing Inquiry</option>
+                        <option value="sales">Sales / Partnership</option>
+                        <option value="other">Other Inquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Your Message *</label>
+                    <textarea id="contact-message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signup')">&times;</span>
+            <h2>Get Started</h2>
+            <p style="margin-bottom: 2rem;">Choose your account type:</p>
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;" onclick="closeModal('signup'); openModal('demo');">I'm an Enterprise Client</button>
+            <button class="btn btn-outline" style="width: 100%; color: var(--anchor-blue); border-color: var(--anchor-blue);" onclick="closeModal('signup'); openModal('carrier');">I'm a Carrier</button>
+        </div>
+    </div>
+    
+    <!-- Floating CTA Container (Book a Demo) -->
+    <div class="floating-cta-container">
+        <button class="btn btn-primary" onclick="openModal('demo')">Book Demo</button>
+    </div>
+
+    <!-- External JavaScript link -->
+    <script src="script.js"></script>
+</body>
+</html>
